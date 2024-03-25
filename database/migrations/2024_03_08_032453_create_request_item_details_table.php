@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('request_id');
             $table->unsignedBigInteger('item_id');
-            $table->foreign('request_id')->references('id')->on('request_items')->onDelete('cascade');
-            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
             $table->integer('qty');
             $table->integer('qty_accepted');
             $table->timestamps();
+
+            $table->foreign('request_id')->references('id')->on('request_items')->onDelete('cascade');
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
         });
     }
 

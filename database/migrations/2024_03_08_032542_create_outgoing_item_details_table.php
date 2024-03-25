@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('outgoing_item_details', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('outgoing_item_id');
-            $table->foreign('outgoing_item_id')->references('id')->on('outgoing_items')->onDelete('cascade');
-            $table->foreignId('item_id')->constrained('items')->onDelete('cascade');
             $table->integer('qty');
             $table->timestamps();
+
+            $table->foreign('outgoing_item_id')->references('id')->on('outgoing_items')->onDelete('cascade');
+            $table->foreignId('item_id')->constrained('items')->onDelete('cascade');
         });
     }
 

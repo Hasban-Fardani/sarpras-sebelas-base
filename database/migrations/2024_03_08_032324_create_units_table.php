@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('chairman_name');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }

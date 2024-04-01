@@ -23,7 +23,8 @@ class ItemFactory extends Factory
             'unit' => 'unit',
             'price' => $this->faker->numberBetween(2000, 5000),
             'category_id' => $this->faker->numberBetween(1, 10),
-
+            'stok' => $this->faker->numberBetween(10, 100),
+            'minimum_stok' => $this->faker->numberBetween(10, 100),
         ];
     }
 }

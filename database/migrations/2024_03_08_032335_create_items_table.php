@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('merk');
             $table->string('unit');
             $table->integer('price');
+            $table->integer('stok')->default(0);
+            $table->integer('minimum_stok')->default(0);
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();

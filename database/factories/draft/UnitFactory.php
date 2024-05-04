@@ -17,8 +17,8 @@ class UnitFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama' => $this->faker->word(),
-            'nama_ketua' => $this->faker->name(),
+            'name' => $this->faker->word(),
+            'chairman_name' => $this->faker->name(),
             'user_id' => $this->faker->numberBetween(1, 13),
         ];
     }

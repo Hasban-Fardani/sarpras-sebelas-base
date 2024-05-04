@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class item extends Model
+class Permintaan extends Model
 {
     use HasFactory;
 
-    public $table = "item";
+    public $table = "permintaan";
 }

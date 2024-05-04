@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Unit>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\BarangMasuk>
  */
-class UnitFactory extends Factory
+class BarangMasukFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,8 @@ class UnitFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama' => $this->faker->word(),
-            'nama_ketua' => $this->faker->name(),
-            'user_id' => $this->faker->numberBetween(1, 13),
+            'unit_id' => $this->faker->numberBetween(1, 10),
+            'supplier_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

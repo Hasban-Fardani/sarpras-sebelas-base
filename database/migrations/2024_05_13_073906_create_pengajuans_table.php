@@ -11,16 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('item', function (Blueprint $table) {
+        Schema::create('pengajuan', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
-            $table->string('kode', 10);
-            $table->string('merek', 25);
-            $table->integer('harga');
-            $table->integer('stok')->default(0);
-            $table->integer('stok_minimum')->default(0);
-            $table->unsignedBigInteger('kategor_id');
+            $table->unsignedBigInteger('unit_id');
             $table->timestamps();
+            
+            $table->foreign('unit_id')->references('id')->on('unit')->cascadeOnDelete();
         });
     }
 
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('pengajuan');
     }
 };

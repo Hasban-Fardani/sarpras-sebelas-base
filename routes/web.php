@@ -34,6 +34,8 @@ Route::group(['prefix' => '/petugas', 'middleware' => ['auth', 'can:isPetugas']]
     Route::get('/user/pdf', UserPdfController::class)->name('pdf');
 
     Route::resource('/user', UserManageController::class);
+    
+    Route::resource('/user/tes', UserManageController::class);
 });
 
 Route::group(['prefix' => '/admin', 'middleware' => ['auth', 'can:isAdmin']], function () {

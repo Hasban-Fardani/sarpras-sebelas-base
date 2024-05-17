@@ -12,12 +12,12 @@ class AdminController extends Controller
         $users = User::latest();
 
         if(request('search')) {
-            // dd(request('search'));
-            $users->whereAny(['name', 'role', 'email'], 'like', '%' . request('search') . '%');
+            $users->whereAny(['nama', 'role', 'email'], 'like', '%' . request('search') . '%');
         }
 
         return view('admin', [
-            'users' => $users->get()
+            'users' => $users->get(),
+            'users' => $users->paginate(5)
         ]);
     }
 }

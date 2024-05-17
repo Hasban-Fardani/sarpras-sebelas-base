@@ -13,18 +13,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('dashboard');
 
-// Route::get('/', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::get('/admin', function () {
-//     return view('admin');
-// })->middleware(['auth', 'admin'])->name('admin');
-
-// Route::get('/', );
-
-// Route::get('/', RedirectController::class);
-
 
 Route::group(['prefix' => '/petugas', 'middleware' => ['auth', 'can:isPetugas']], function () {
     Route::get('/', AdminController::class)->name('petugas');

@@ -28,7 +28,7 @@
                 @csrf
                 <div class="flex w-full gap-4">
                     <div class="w-1/2">
-                        <input type="text" placeholder="name" name="name" value="{{ $user->name }}"
+                        <input type="text" placeholder="name" name="nama" value="{{ $user->nama }}"
                             class="w-full text-gray-500 bg-white border-none rounded shadow dark:text-white dark:bg-gray-800 placeholder:font-semibold">
                     </div>
                     <div class="w-1/2">

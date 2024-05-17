@@ -33,7 +33,7 @@ class UserManageController extends Controller
     public function store(Request $request) : RedirectResponse
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:25',
+            'nama' => 'required|string|max:25',
             'email' => 'required|string|lowercase|email|max:25|unique:'.User::class,
             'password' => 'required|max:25',
             'nomor_induk' => 'required|string|max:10|unique:'.User::class
@@ -66,7 +66,7 @@ class UserManageController extends Controller
     public function update(Request $request, string $id)
     { 
         $validated = $request->validate([
-            'name' => 'required|string|max:25',
+            'nama' => 'required|string|max:25',
             'email' => 'required|string|lowercase|email|max:25|unique:'.User::class,
             'nomor_induk' => 'required|string|max:10|unique:'.User::class
         ]);

@@ -34,9 +34,11 @@ class AuthenticatedSessionController extends Controller
             return redirect(route('admin'));
         } elseif($role == 'petugas') {
             return redirect(route('petugas'));
+        } elseif($role == 'pengawas') {
+            return redirect(route('pengawas'));
         }
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('unit', absolute: false));
     }
 
     /**
@@ -50,6 +52,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
         
-        return redirect('/');
+        return redirect(route('dashboard'));
     }
 }

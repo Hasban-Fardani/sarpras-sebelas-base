@@ -10,7 +10,7 @@
             <div class="flex w-full gap-4">
                 <div class="w-1/2 overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
-                        Page {{ Auth::user()->role }} !!
+                        <span class="text-xl font-semibold">Page {{ Auth::user()->role }}</span>
                     </div>
                 </div>
                 <div class="flex float-left w-1/2 gap-4">                    

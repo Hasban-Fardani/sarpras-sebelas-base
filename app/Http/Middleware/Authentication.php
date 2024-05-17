@@ -16,7 +16,7 @@ class Authentication
      */
     public function handle(Request $request, Closure $next, ...$guards): Response
     {
-        if(! Auth::check()) {
+        if(Auth::guard($guards)->guest()) {
             return redirect(route('login'));
         }
 
